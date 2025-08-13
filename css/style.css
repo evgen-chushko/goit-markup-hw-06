@@ -3,6 +3,7 @@ body {
 	color: #434455;
 	background-color: #ffffff;
 	margin: 0;
+	overflow-x: hidden;
 }
 
 img {
@@ -36,8 +37,27 @@ p {
 
 .container {
 	max-width: 1158px;
+	min-width: 320px;
 	margin: 0 auto;
 	padding: 0 auto;
+}
+
+@media screen and (min-width: 320px) {
+	.container {
+		width: 320px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.container {
+		width: 768px;
+	}
+}
+
+@media screen and (min-width: 1158px) {
+	.container {
+		width: 1158px;
+	}
 }
 
 .header {
@@ -46,8 +66,15 @@ p {
 }
 
 .logo {
+	margin-left: 16px;
 	width: 115px;
 	height: 24px;
+}
+
+.icon-burger {
+	width: 24px;
+	height: 24px;
+	margin-left: 140px;
 }
 
 .nav {
@@ -56,9 +83,8 @@ p {
 }
 
 .menu {
-	display: flex;
+	display: none;
 	gap: 40px;
-	padding-left: 76px;
 }
 
 .menu a {
@@ -96,9 +122,7 @@ p {
 }
 
 .contact ul {
-	display: flex;
-	gap: 40px;
-	padding-left: 332px;
+	display: none;
 }
 
 .contact a {
@@ -115,6 +139,70 @@ p {
 .contact a:focus {
 	color: #404bbf;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+	.menu {
+		display: flex;
+	}
+	.contact ul {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.nav {
+		gap: 80px;
+	}
+	.icon-burger {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1158px) {
+	.contact ul {
+		display: flex;
+		flex-direction: row;
+		gap: 24px;
+		padding-left: 200px;
+	}
+
+	.nav {
+		gap: 120px;
+	}
+
+	.menu {
+		display: flex;
+	}
+	.icon-burger {
+		display: none;
+	}
+}
+
+/* .moda-overlay_menu {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	pointer-events: none;
+	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* .modal-overlay_menu.is-open {
+	opacity: 1;
+	pointer-events: auto;
+} */
+
+/* .modal-menu {
+	background-color: #fff;
+	max-width: 50px;
+	max-height: 50px;
+} */
 
 .hero {
 	background-color: #2e2f42;
@@ -155,6 +243,7 @@ p {
 
 .block-icon {
 	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
 	width: 264px;
@@ -165,8 +254,13 @@ p {
 }
 
 .icons {
+	display: none;
 	width: 64px;
 	height: 64px;
+}
+
+.text-icon {
+	text-align: center;
 }
 
 .features {
@@ -175,20 +269,69 @@ p {
 
 .features-list {
 	display: flex;
-	gap: 24px;
+	flex-direction: column;
+	gap: 72px;
+}
+
+.features-list li {
+	width: 288px;
+	margin: 0 16px;
 }
 
 .features-list h3 {
 	font-size: 20px;
-	font-weight: 500;
-	width: 264px;
-	padding: 8px 0 8px 0;
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 40px;
+	letter-spacing: 2%;
+	text-align: center;
 }
 
 .features-list p {
-	font-size: 16px;
+	text-align: left;
 	line-height: 1.5;
-	width: 264px;
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 2%;
+	padding-top: 8px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+	.features-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 40px;
+	}
+	.features-list h3 {
+		text-align: left;
+	}
+}
+
+@media screen and (min-width: 1158px) {
+	.features-list {
+		display: flex;
+		flex-direction: row;
+		gap: 24px;
+		margin: 0 12px;
+	}
+
+	.icons {
+		display: block;
+	}
+	.block-icon {
+		display: flex;
+	}
+	.features-list p {
+		font-weight: 400;
+	}
+	.features-list h3 {
+		font-size: 20px;
+		text-align: left;
+		line-height: 1.5;
+	}
+	.features-list li {
+		margin: 0;
+	}
 }
 
 .team {
@@ -205,8 +348,8 @@ p {
 
 .team-list {
 	display: flex;
-	gap: 24px;
-	justify-content: center;
+	flex-direction: column;
+	gap: 72px;
 }
 
 .team-list li {
@@ -216,6 +359,8 @@ p {
 		0 2px 1px rgba(46, 47, 66, 0.08),
 		0 1px 1px rgba(46, 47, 66, 0.16),
 		0 1px 6px rgba(46, 47, 66, 0.08);
+	width: 264px;
+	margin: 0 28px;
 }
 
 .contact-1 {
@@ -262,6 +407,30 @@ p {
 	padding-top: 8px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+	.team-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+		margin: 0 108px;
+		li {
+			margin: 0;
+		}
+	}
+}
+
+@media screen and (min-width: 1158px) {
+	.team-list {
+		display: flex;
+		flex-direction: row;
+		gap: 24px;
+	}
+
+	.team-list li {
+		margin: 0;
+	}
+}
+
 .portfolio {
 	padding: 120px 0;
 	text-align: center;
@@ -275,7 +444,7 @@ p {
 
 .portfolio-list {
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 	gap: 24px;
 }
 
@@ -296,7 +465,8 @@ p {
 	overflow: hidden;
 	background-color: #ffffff;
 	border-radius: 0 0 4px 4px;
-	min-width: 360px;
+	width: 288px;
+	margin: 0 16px;
 }
 
 .overlay {
@@ -349,24 +519,66 @@ h4 {
 	letter-spacing: 2%;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+	.portfolio-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		margin: 0 16px;
+		li {
+			margin: 0;
+			width: 356px;
+		}
+	}
+}
+
+@media screen and (min-width: 1158px) {
+	.portfolio-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
+	}
+
+	.card {
+		width: 360px;
+		margin: 0;
+	}
+}
+
 .footer {
 	display: flex;
-	padding: 100px 0 100px 156px;
+	flex-direction: column;
+	gap: 72px;
+	padding: 96px 0;
 	background-color: #2e2f42;
 	color: #ffffff;
 }
 
+.logo-1 {
+	margin: 0 80px;
+}
+
 .text-footer {
-	width: 264px;
+	width: 288px;
+	margin: 0 16px;
 }
 
 .text-footer p {
 	line-height: 1.5;
 	font-size: 16px;
+	letter-spacing: 2%;
+}
+
+.contacts-footer {
+	width: 24px;
+	height: 24px;
 }
 
 .social-media {
-	padding: 0 80px 0 120px;
+	padding: 0 48px;
+}
+
+.social-media h4 {
+	text-align: center;
 }
 
 .social-media .svg:hover {
@@ -386,10 +598,14 @@ h4 {
 
 .subscribe {
 	display: flex;
-	align-items: center;
-	gap: 24px;
+	flex-direction: column;
+	gap: 16px;
 	right: 14.5%;
 	bottom: 43%;
+}
+
+.subscribe > h4 {
+	text-align: center;
 }
 
 .input-subsc {
@@ -397,14 +613,17 @@ h4 {
 	border: 1px solid #ffffff;
 	background-color: #2e2f42;
 	padding: 8px 106px 8px 16px;
+	margin: 0 16px;
 }
 
 .subscr-btn {
 	display: flex;
 	align-items: center;
 	gap: 8px;
+	width: 165px;
 	background-color: #4d5ae5;
 	padding: 8px 24px;
+	margin: 0 78px;
 	border: none;
 	border-radius: 4px;
 }
@@ -412,6 +631,72 @@ h4 {
 .icon-frame {
 	width: 24px;
 	height: 20px;
+}
+
+@media screen and (min-width: 768px) {
+	.footer {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+	}
+	.social-media {
+		padding: 0;
+	}
+
+	.logo-1 {
+		margin: 0;
+		margin-bottom: 16px;
+	}
+
+	.social-media h4,
+	.subscribe > h4 {
+		text-align: left;
+	}
+
+	.subscr-btn {
+		position: absolute;
+		left: 90%;
+		top: 78%;
+	}
+
+	.text-footer {
+		margin: 0;
+		padding-left: 50px;
+	}
+
+	.text-footer p {
+		width: 288px;
+	}
+
+	.subscribe {
+		position: relative;
+		padding: 100px 0 0 110px;
+	}
+
+	.input-subsc {
+		margin: 0;
+	}
+}
+
+@media screen and (min-width: 1158px) {
+	.footer {
+		display: flex;
+		flex-direction: row;
+		gap: 60px;
+	}
+
+	.subscribe {
+		position: relative;
+		padding: 0;
+		left: 1%;
+	}
+
+	.subscr-btn {
+		position: absolute;
+		margin: 0;
+		top: 30%;
+		left: 105%;
+	}
 }
 
 .modal-overlay {
@@ -438,7 +723,7 @@ h4 {
 .modal {
 	background-color: #fff;
 	max-width: 408px;
-	max-height: 584px;
+	max-height: 600px;
 	border-radius: 4px;
 }
 
@@ -461,7 +746,7 @@ h4 {
 
 .form-input {
 	border-radius: 4px;
-	width: 360px;
+	width: 256px;
 	padding: 8px 16px;
 	border: 1px solid #2e2f4266;
 	outline: none;
@@ -509,7 +794,7 @@ h4 {
 
 .form-textarea {
 	border-radius: 4px;
-	width: 360px;
+	width: 256px;
 	border: 1px solid #2e2f4266;
 	outline: none;
 	padding: 8px 0 0 16px;
@@ -527,7 +812,7 @@ h4 {
 }
 
 .modal-btn {
-	padding: 24px 120px;
+	padding: 12px 60px;
 }
 
 .icon-close {
@@ -542,14 +827,14 @@ h4 {
 	height: 24px;
 	border-radius: 20px;
 	background-color: #e7e9fc;
-	margin: 24px 24px 0 360px;
+	margin: 24px 0 0 255px;
 }
 
 .checkbox-custom {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 16px;
+	width: 20px;
 	height: 16px;
 	border: 1px solid #2e2f4266;
 	border-radius: 2px;
@@ -569,4 +854,27 @@ h4 {
 
 .checkbox:checked + .checkbox-custom {
 	background-color: #404bbf;
+}
+
+@media screen and (min-width: 768px) {
+	.modal {
+		width: 408px;
+	}
+
+	.form-input,
+	.form-textarea {
+		width: 360px;
+	}
+
+	.modal-btn {
+		padding: 24px 120px;
+	}
+
+	.checkbox-custom {
+		width: 16px;
+	}
+
+	.block-icon-close {
+		margin: 24px 0 0 360px;
+	}
 }
