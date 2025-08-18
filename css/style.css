@@ -187,7 +187,8 @@ p {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	height: 100vh;
+	height: auto;
+	width: auto;
 	z-index: 999;
 	opacity: 0;
 	pointer-events: none;
@@ -648,7 +649,7 @@ h4 {
 
 .text-footer {
 	width: 288px;
-	margin: 0 16px;
+	margin: 0 auto;
 }
 
 .text-footer p {
@@ -663,10 +664,10 @@ h4 {
 }
 
 .social-media {
-	padding: 0 48px;
+	padding: 0 auto;
 }
 
-.social-media h4 {
+.social-media > h4 {
 	text-align: center;
 }
 
@@ -682,8 +683,9 @@ h4 {
 
 .icons-social-media {
 	display: flex;
-
 	gap: 16px;
+	width: 208px;
+	margin: 0 auto;
 	padding-top: 16px;
 }
 
@@ -699,16 +701,29 @@ h4 {
 	bottom: 43%;
 }
 
-.subscribe > h4 {
-	text-align: center;
+.h-footer {
+	width: 75px;
+	margin: 0 auto;
+}
+
+.subscribe label {
+	width: 288px;
+	margin: 0 auto;
+}
+
+.lower-media {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
 }
 
 .input-subsc {
+	width: 288px;
 	border-radius: 4px;
 	border: 1px solid #ffffff;
 	background-color: #2e2f42;
 	padding: 8px 106px 8px 16px;
-	margin: 0 16px;
+	margin: 0 auto;
 }
 
 .subscr-btn {
@@ -718,7 +733,7 @@ h4 {
 	width: 165px;
 	background-color: #4d5ae5;
 	padding: 8px 24px;
-	margin: 0 78px;
+	margin: 0 auto;
 	border: none;
 	border-radius: 4px;
 }
@@ -731,11 +746,16 @@ h4 {
 @media screen and (min-width: 768px) {
 	.footer {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 400px);
 		gap: 24px;
 	}
 	.social-media {
 		padding: 0;
+		width: 208px;
+	}
+
+	.icons-social-media {
+		margin: 0;
 	}
 
 	.logo-1 {
@@ -743,29 +763,37 @@ h4 {
 		margin-bottom: 16px;
 	}
 
-	.social-media h4,
-	.subscribe > h4 {
+	.social-media h4 {
 		text-align: left;
 	}
 
 	.subscr-btn {
-		position: absolute;
-		left: 90%;
-		top: 78%;
+		margin: 0;
 	}
 
 	.text-footer {
 		margin: 0;
-		padding-left: 50px;
+		padding-left: 100px;
 	}
 
 	.text-footer p {
 		width: 288px;
 	}
 
+	.h-footer {
+		margin: 0;
+	}
+
+	.lower-media {
+		flex-direction: row;
+	}
+
 	.subscribe {
-		position: relative;
-		padding: 100px 0 0 110px;
+		margin-left: 100px;
+	}
+
+	.subscribe label {
+		margin: 0;
 	}
 
 	.input-subsc {
@@ -780,9 +808,13 @@ h4 {
 		gap: 60px;
 	}
 
+	.text-footer {
+		padding-left: 50px;
+	}
+
 	.subscribe {
 		position: relative;
-		padding: 0;
+		margin: 0;
 		left: 1%;
 	}
 
