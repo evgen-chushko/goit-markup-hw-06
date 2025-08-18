@@ -207,14 +207,16 @@ p {
 }
 
 .block-icon-black-2 {
+	position: absolute;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	left: 85%;
+	bottom: 93%;
 	width: 24px;
 	height: 24px;
 	border: 1px solid #e7e9fc;
 	border-radius: 20px;
-	/* margin: 24px 24px 24px 272px; */
 }
 
 .menu-list {
@@ -222,7 +224,7 @@ p {
 	flex-direction: column;
 	gap: 40px;
 	font-size: 36px;
-	margin: 0 0 168px 16px;
+	padding: 72px 0 168px 16px;
 	a {
 		text-decoration: none;
 		color: #2e2f42;
@@ -234,7 +236,7 @@ p {
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
-	margin: 0 0 80px 16px;
+	padding: 0 0 80px 16px;
 	a {
 		font-size: 20px;
 		font-weight: 500;
@@ -248,7 +250,7 @@ p {
 	justify-content: center;
 	gap: 40px;
 	width: 280px;
-	margin: 0 20px;
+	margin: 0 auto;
 }
 
 .hero {
@@ -789,7 +791,7 @@ h4 {
 	}
 
 	.subscribe {
-		margin-left: 100px;
+		margin: 50 px 0 0 100px;
 	}
 
 	.subscribe label {
